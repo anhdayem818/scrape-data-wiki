@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ScrapeDataWiki</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+hello world
+<script type="text/javascript">
+  $.ajax({
+         url: "http://api.serverkits.com/v1/classes/videos",
+         type: "get",
+         dataType: 'json',
+         data: { token: '62f644e13bdde4b39257d780da730292', appid: '562b06718f45a8227e000001'},         
+         success: function(data) { console.log(data); }
+      });
+</script>
+</body>
+</html>
